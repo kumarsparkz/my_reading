@@ -17,28 +17,26 @@ If you have Node installed, you have NPM, if not install node:
 Clone this repository:
 ```
 git clone https://github.com/kumarsparkz/my_reading.git my_reading
-
+```
 Change directory to cloned repo:
 ```
 cd my_reading
-
+```
 Install dependencies:
 ```
 npm install
-
+```
 Start the server:
 ```
 npm start
 ```
-
 Alternatively, you can use yarn instead of npm.
 ```
 yarn install
 yarn start
-
+```
 This will open a new window in your default browser at [localhost:3000](http://localhost:3000/) where you can start interacting with the app.
 
 **************************************************
 ## Thank You 
-
 **************************************************
