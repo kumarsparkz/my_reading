@@ -13,6 +13,9 @@ If you have Node installed, you have NPM, if not install node:
 
 * [Node](https://nodejs.org/en/)
 
+* [Git] (https://www.atlassian.com/git/tutorials/install-git)
+  Install git
+
 ### Installing
 Clone this repository:
 ```
