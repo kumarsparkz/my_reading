@@ -9,7 +9,8 @@ class Search extends Component {
         super();
         this.state = {
             query: '',
-            books: []
+            books: [],
+            noresults: ''
         };
     }
 
@@ -23,7 +24,8 @@ class Search extends Component {
         this.setState({ query: query });
         const trimmedQuery = query.trim();
         if (trimmedQuery === '') {
-        this.setState({ books: [] });
+            this.setState({ books: [] });
+            this.setState({ noresults: "Sorry, No Search Results found" });
                         return ;
         }
         BooksAPI.search(trimmedQuery, 5).then((response) => {
@@ -44,9 +46,22 @@ class Search extends Component {
                     };
                 });
                 this.setState({ books });
+            } else {
+                // If the response length is zero, no search results found, then set state to show not found as feedback to cx
+                this.setState({ books: [] });
+                this.setState({ noresults: "Sorry, No Search Results found" });
             }
         });
     };
+
+    handleChange = (event) => {
+        var value = event.target.value
+        this.setState(() => {
+          return {query: value}
+        })
+        console.log(value)
+        this.updateQuery(value)
+      }
 
     render () {
         const { books } = this.state;
@@ -65,7 +80,7 @@ class Search extends Component {
                 <input
                     type="text"
                     placeholder="Search by title or author"
-                    onChange={ (event) => this.updateQuery(event.target.value) }
+                    onChange={ this.handleChange }
                     value = { this.state.query }
                 />
               </div>
@@ -87,6 +102,9 @@ class Search extends Component {
                         ))
                     }
               </ol>
+            </div>
+            <div className="no-results">
+              <p> { this.state.noresults } </p>
             </div>
           </div>
         );

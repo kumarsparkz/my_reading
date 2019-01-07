@@ -105,6 +105,17 @@ body, .app {
   font-size: 0;
 }
 
+.no-results {
+  display: text;
+  color: #d30707;
+  background: white;
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  text-align: left;
+  font-size: 3em;
+}
+
 .search-books-results {
   padding: 80px 10px 20px;
 }
