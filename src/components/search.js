@@ -46,6 +46,7 @@ class Search extends Component {
                     };
                 });
                 this.setState({ books });
+                this.setState({ noresults: '' });
             } else {
                 // If the response length is zero, no search results found, then set state to show not found as feedback to cx
                 this.setState({ books: [] });
@@ -59,7 +60,6 @@ class Search extends Component {
         this.setState(() => {
           return {query: value}
         })
-        console.log(value)
         this.updateQuery(value)
       }
 
